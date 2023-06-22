@@ -1,0 +1,221 @@
+.hidden {
+    display: none;
+}
+
+.text-left,
+table.text-left th,
+table.text-left td {
+    text-align: left !important;
+}
+
+.table-borderless td {
+    border: none;
+}
+
+.home-widget table.table-stripped {
+    border-collapse: separate;
+    border-spacing: 0 7px;
+}
+
+.home-widget table.table-stripped tr {
+    background-color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.home-widget table.table-stripped td {
+    line-height: 30px;
+    padding: 7px 10px;
+    border-top: none;
+}
+
+.home-widget table.table-stripped td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.home-widget table.table-stripped td:last-child {
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+/* ************************* Common Styles ***************************** */
+
+.cursor-move {
+    cursor: move;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.rl-margin-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.width-half {
+    width: 50%;
+}
+
+.width-two-third {
+    width: 66%;
+}
+
+.width-three-fourth {
+    width: 75%;
+}
+
+.input-error {
+    font-weight: 500;
+    background: #fdeeee !important;
+    border-color: #f3c9c9 !important;
+    /* box-shadow: 0 0 3px #ff0000 !important; */
+}
+
+
+/* ********** Tables ********** */
+
+table.table-scroll-tbody>tbody {
+    display: block;
+    height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+table.table-scroll-tbody thead,
+table.table-scroll-tbody tbody>tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+
+/* ********** Form and input ********** */
+label.for-required:after {
+    content: "*";
+    color: red;
+    font-size: inherit;
+    font-weight: normal !important;
+}
+
+/* *************** Error Message and Alerts ******************* */
+
+.msg {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.msg.msg-full {
+    width: 100%;
+}
+
+.msg:not(.msg-full) {
+    width: max-content;
+    min-width: 50%;
+    max-width: 100%;
+}
+
+.msg-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.msg-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+
+.msg-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+
+.msg-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+
+/* ********** Success Modal ********** */
+
+#successModalContent {
+    margin-top: 10px;
+}
+
+#successModalBtns>div {
+    display: inline-block;
+    padding: 5px;
+}
+
+
+/* ********** Data Import Modal ********** */
+
+#dataImportModalTitle {
+    font-size: 22px;
+    margin: 10px 0 30px;
+}
+
+#dataImportModalContent {
+    margin: 10px 0 20px;
+}
+
+#dataImportModalContent form input[type="file"] {
+    padding: 20px;
+    border: 3px solid #ccc;
+    cursor: pointer;
+}
+
+#dataImportModalContent .msg {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+#dataImportModalBtns>div {
+    display: inline-block;
+    padding: 5px;
+}
+
+#dataImportModalContent .nav-tabs .nav-item:first-child .nav-link {
+    margin-left: 0;
+}
+
+
+/* ********** Ajax Processng Screen Overlay ********** */
+
+.ajax-processing:after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    background-image: url("../images/loading.gif");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-blend-mode: overlay;
+    z-index: 9999;
+}
+
+
+/* ************ Print media *************** */
+
+@media print {
+    /* body * {
+        visibility: hidden;
+    } */
+    /* .content-wrapper_sub * {
+        visibility: visible;
+    } */
+    body {
+        background: transparent;
+        padding: 20px;
+    }
+}

@@ -1,0 +1,671 @@
+/******************** probationer dashboard styles start **********************************/
+
+.borderbox {
+    background: #fff;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.borderbox:hover {
+    background-color: #9aa4cc;
+}
+
+#userattendance form {
+    width: 70%;
+    margin: 0 auto;
+}
+
+#userattendance form .input-group {
+    margin-left: 0px;
+}
+
+#userattendance .probationerattendance thead {
+    background: #789abd;
+    color: #fff;
+}
+
+#userattendance .probationerattendance tbody {
+    background: #fff;
+}
+
+/******************** probationer dashboard styles end **********************************/
+
+/******************** mytarget dashboard styles start **********************************/
+
+#mytarget .user_manage {
+    background: #e9eeff;
+}
+
+.mytarget-table td {
+    border: none;
+}
+
+.mytarget-table td:first-child {
+    position: relative;
+    bottom: 35px;
+}
+
+.targetInputRow .targetsetInput {
+    width: 40%;
+}
+
+.mytarget-table td:last-child {
+    width: 30%;
+    text-align: right;
+    padding-right: 50px;
+    vertical-align: middle;
+}
+
+.accordion .accordion-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.accordion .accordion-title .accordion-title-icon {
+    color: #5176d3;
+    font-size: 25px;
+}
+.table.mytarget-table {
+    margin-bottom: 0px;
+}
+.target-your-goal {
+    width: 30%;
+    text-align: right;
+    margin-right: 20px;
+    margin-left: auto;
+}
+
+#viewmytarget .mytarget-viewtable table td {
+    border-radius: 0px;
+}
+
+.accordion .disabled {
+    pointer-events: none;
+    background-color: #696969;
+}
+#viewmytarget .viewtarget-search {
+    /* display: flex;
+        justify-content:center; */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#medicalexamination .mobile-button,
+#user-attendance #monthlysessions .mobile-button,
+#user-attendance #missedsessions .mobile-button,
+#viewmytarget .viewtargetsubmit .mobile-button {
+    visibility: hidden;
+}
+
+/******************** mytarget dashboard styles end **********************************/
+
+/******************** Attendance Report dashboard styles start **********************************/
+
+.attandance-form-date .form-group {
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.missedsession-report .missedsession-title,
+.monthlyattendance-report .monthly-training-title {
+    color: #ffffff;
+    background-color: #818181;
+    text-align: center;
+    height: 40px;
+}
+
+.monthlyattendance-report .monthly-report-block {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#missedsessions .missedsession-report {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* #missedsessions .missedsession-report table th:first-child {
+    background-color: #721b1b;
+} */
+
+#missedsessions .missedsession-report table td:first-child {
+    /* background-color: #CFCFCF; */
+    border-radius: 0;
+    padding-left: 25px;
+}
+
+.missedsession-report .missedsession-title,
+.monthly-training-title span {
+    line-height: 40px;
+}
+
+/* .monthlyattendance-report table th:first-child {
+    background-color: #DEF6BF;
+} */
+
+#user-fitness .fitness-user-manage {
+    margin-top: 0px;
+    margin-bottom: 15px;
+    padding-top: 0px;
+}
+
+#missedsessions .missedsession-report table td:last-child,
+#missedsessions .missedsession-report table th:last-child,
+.monthlyattendance-report table td:not(:first-child),
+.monthlyattendance-report table th:not(:first-child) {
+    text-align: center;
+}
+
+.monthlyattendance-report table td:first-child {
+    /* background-color: #DEF6BF; */
+    border-radius: 0;
+    padding-left: 25px;
+}
+
+#extrasessions table thead {
+    height: 60px;
+    background-color: #c9d2f1;
+}
+/******************** Attendance Report dashboard styles end **********************************/
+
+.sickreport-header > div,
+.sick-accordion-heading > span {
+    display: inline-block;
+}
+.sickreport-header .sick-heading-date,
+.sick-accordion-heading .accordion-heading-date {
+    width: 81%;
+    text-align: left;
+}
+
+.sickreport-header .sick-heading-date {
+    padding-left: 55px;
+}
+
+.sickreport-header .sick-heading-empty,
+.sick-accordion-heading .accordion-heading-icon {
+    width: 16%;
+    text-align: right;
+}
+
+#user-attendance .fitnessanlytics-tab,
+#user-fitness .fitnessanlytics-tab,
+#userhealthprofiles .healthprofiles-tab,
+#userhospitalization .hospitalization-tab,
+#user-attendance .attendance-tab {
+    border-bottom: none;
+}
+
+/******************** user timetable styles start *******************************/
+
+#usertimetable .tab-content,
+#userhospitalization .tab-content,
+#userhealthprofiles .tab-content {
+    background: #fff;
+    padding: 30px 0px 50px;
+}
+
+#usertimetable .tab-content .dropdown {
+    text-align: center;
+}
+
+#usertimetable .tab-content .dropdown button {
+    margin: 30px;
+    width: 150px;
+}
+
+#usertimetable table {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.tab-content .tableinfo {
+    border: none;
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 0 0.8rem;
+}
+
+.tableinfo thead th {
+    border: none;
+}
+
+.tableinfo tbody tr {
+    margin-bottom: 10px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #e9eeff;
+}
+.tableinfo tbody td {
+    border-style: none;
+}
+
+.tableinfo tbody .prescription-view-img img {
+    height: 25px;
+    width: 25px;
+}
+
+#sickreportAccordion .card {
+    border-style: none;
+    background-color: transparent !important;
+}
+
+#sickreportAccordion .card-header {
+    border-style: none;
+    height: 45px;
+    background-color: #e9eeff;
+    border-radius: 10px;
+}
+
+#sickreportAccordion .card-header .accordion-title-date {
+    padding-left: 45px;
+}
+
+#sickreportAccordion .card-body {
+    padding-left: 30px;
+}
+
+#sickreportAccordion .card-body p {
+    margin-top: 10px;
+}
+
+#medicalexamination .medical-data-table {
+    padding: 0px 20px 0px 100px;
+}
+
+#medicalexamination .medicaldatatext {
+    background-color: #f7fcff;
+    padding: 15px;
+}
+
+.prescription-view-img a {
+    padding: 0 5%;
+}
+
+#physicalactivity form {
+    text-align: center;
+}
+
+#physicalactivity form .setgoal {
+    background: #48b7a3;
+    color: #fff;
+}
+
+.Schedule {
+    background: #fff;
+    height: 100%;
+    padding: 20px 8px;
+    border-radius: 10px;
+}
+
+.Schedule .row {
+    margin-bottom: 5px;
+}
+
+.prescriptionreports #accordion ul li {
+    background: #b7e2fb;
+    padding: 2px 10px;
+    margin: 5px 0px;
+    cursor: pointer;
+}
+
+.prescriptionreports #accordion ul li label {
+    font-size: 13px;
+}
+
+.prescriptionreports table th,
+.prescriptionreports table td {
+    border: none;
+}
+
+#prescriptionhistory ul li label,
+#patientreport ul li label {
+    font-size: 12px;
+}
+
+.prescriptionreports ul li .form-group,
+.prescriptionreports ul li p {
+    margin-bottom: 0;
+}
+
+.prescriptionreports ul li img,
+#patientreport ul li img {
+    width: 40px;
+}
+
+.prescriptionreports ul li .downloadBtn,
+#patientreport ul li .downloadBtn {
+    padding: 10px 40px;
+    float: right;
+}
+/******************** Hospitalization dashboard styles start **********************************/
+
+#userhealthprofiles .familyinfo-heading {
+    height: 50px;
+    color: #ffffff;
+    background-color: #9aa4cc;
+}
+
+#userhealthprofiles .familyinfo-heading h4 {
+    line-height: 50px;
+}
+
+#heathprofile-investigation input,
+#heathprofile-physical input,
+#heathprofile-generalinfo input,
+#heathprofile-generalinfo textarea {
+    background-color: #ffffff;
+}
+
+#heathprofile-familyhistory .personal-history {
+    background-color: #dcf0f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#heathprofile-investigation .immunization {
+    background: #dcf0f9;
+    padding: 30px 50px;
+    border-radius: 8px;
+}
+
+/******************** fitness dashboard styles start **********************************/
+
+.fitness-month-selector .month-selector,
+.timetable-selector .timetable-time-selector {
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fitness-analytics {
+    height: 60px;
+    border: 1px solid #e5e5e5;
+    text-align: center;
+    line-height: 60px;
+}
+
+/******************** fitness dashboard styles end **********************************/
+
+/******************** timetable dashboard styles start **********************************/
+
+#user-timetable .view-timetable span {
+    line-height: 50px;
+}
+
+#user-timetable .view-timetable table thead {
+    background-color: #c9d2f1;
+}
+
+#heathprofile-physical .physical-test-group-1,
+#heathprofile-investigation .healthinvestigation-group-1 {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#heathprofile-physical .physical-test-group-2 {
+    width: 86%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#heathprofile-physical .physical-test-group-2-sub {
+    padding-left: 5%;
+}
+
+/******************** input range styles start *******************************/
+
+input[type="range"] {
+    height: 36px;
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 100%;
+}
+
+input[type="range"]:focus {
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000;
+    background: #43808d;
+    border-radius: 0px;
+    border: 0px solid #000000;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    box-shadow: 0px 0px 0px #43808d;
+    border: 2px solid #43808d;
+    height: 28px;
+    width: 28px;
+    border-radius: 29px;
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -14px;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+    background: #43808d;
+}
+
+input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000;
+    background: #43808d;
+    border-radius: 0px;
+    border: 0px solid #000000;
+}
+
+input[type="range"]::-moz-range-thumb {
+    box-shadow: 0px 0px 0px #43808d;
+    border: 2px solid #43808d;
+    height: 28px;
+    width: 28px;
+    border-radius: 29px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+input[type="range"]::-ms-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+input[type="range"]::-ms-fill-lower {
+    background: #43808d;
+    border: 0px solid #000000;
+    border-radius: 0px;
+    box-shadow: 0px 0px 0px #000000;
+}
+
+input[type="range"]::-ms-fill-upper {
+    background: #43808d;
+    border: 0px solid #000000;
+    border-radius: 0px;
+    box-shadow: 0px 0px 0px #000000;
+}
+
+input[type="range"]::-ms-thumb {
+    margin-top: 1px;
+    box-shadow: 0px 0px 0px #43808d;
+    border: 2px solid #43808d;
+    height: 28px;
+    width: 28px;
+    border-radius: 29px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+input[type="range"]:focus::-ms-fill-lower {
+    background: #43808d;
+}
+
+input[type="range"]:focus::-ms-fill-upper {
+    background: #43808d;
+}
+/******************** input range styles end *******************************/
+
+/******************** doctor module start *******************************/
+
+/* #doctor-appointments .appointment-tab {
+        border-bottom: none;
+    }
+
+    #doctor-appointments .current-appointments table,
+    #doctor-appointments .history-appointments table {
+        border-collapse: separate;
+        border-spacing: 0 10px;
+    }
+
+    #doctor-appointments .current-appointments table tr,
+    #doctor-appointments .history-appointments table tr {
+        background-color: #E9EEFF;
+    }
+
+    #doctor-appointments .current-appointments table td:first-child,
+    #doctor-appointments .history-appointments table td:first-child {
+        width: 60%;
+        padding-left: 30px;
+    }
+
+    #doctor-appointments .current-appointments table td,
+    #doctor-appointments .history-appointments table td {
+        border-top: none;
+        border-radius: 0px;
+    } */
+
+/******************** doctor module end *******************************/
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    #user-attendance #monthlysessions .viewtargetsubmit,
+    #user-attendance #missedsessions .viewtargetsubmit,
+    #viewmytarget .viewtargetsubmit {
+        text-align: center;
+        margin-top: 0px !important;
+    }
+
+    #medicalexamination .desktop-button,
+    #user-attendance #monthlysessions .desktop-button,
+    #user-attendance #missedsessions .desktop-button,
+    #viewmytarget .viewtargetsubmit .desktop-button {
+        display: none;
+    }
+
+    #medicalexamination .mobile-button,
+    #user-attendance #monthlysessions .mobile-button,
+    #user-attendance #missedsessions .mobile-button,
+    #viewmytarget .viewtargetsubmit .mobile-button {
+        visibility: visible;
+    }
+
+    .fitness-month-selector .month-selector,
+    .timetable-selector .timetable-time-selector {
+        width: 50%;
+    }
+
+    .fitness-user-manage .fitnessanlytics-tab,
+    #user-attendance .attendance-tab,
+    #userhealthprofiles .healthprofiles-tab,
+    #userhospitalization .hospitalization-tab {
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tableinfo tbody .prescription-view-img img {
+        height: 20px;
+        width: 20px;
+    }
+
+    #medicalexamination .medical-exam-mobile {
+        padding-left: 55px;
+        padding-right: 55px;
+    }
+
+    #medicalexamination .medical-exam-mobile .rollnosubmit {
+        margin-top: 25px;
+        text-align: center;
+    }
+
+    #medicalexamination .medical-data-table {
+        padding: 0 30px 0 50px;
+    }
+
+    #heathprofile-generalinfo .generalinfo {
+        padding: 10px;
+    }
+
+    .monthlyattendance-report .monthly-report-block {
+        width: 168%;
+    }
+
+    #missedsessions .missedsession-report {
+        width: 100%;
+    }
+
+    #user-attendance #fitnessanalytics-data,
+    #heathprofile-familyhistory .familyhistory,
+    #heathprofile-familyhistory .personal-history {
+        width: 86%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #heathprofile-physical .physical-test-group-1 {
+        padding-left: 8px;
+    }
+
+    #heathprofile-investigation .healthinvestigation-group-1 {
+        width: 88%;
+    }
+
+    #monthlysessions .monthlysession-selection,
+    #missedsessions .missedsession-selection {
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #assesmentForm table th {
+        width: 35%;
+    }
+
+    #assesmentForm .assesment-card {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #user-attendance .attendance-height {
+        min-height: 630px;
+    }
+
+    #medicalexamination .medicaldatatext {
+        width: 85%;
+        padding: 20px 40px 20px 40px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .assesment-form .assesment-body {
+        margin-top: 0px !important;
+    }
+}

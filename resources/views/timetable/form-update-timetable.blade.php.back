@@ -1,0 +1,216 @@
+<form name="timetableUpdate_form" id="timetableUpdate_form" action="{{ url('timetables/ajax') }}" method="post" class=""
+    accept-charset="utf-8">
+    @csrf
+
+    <?php
+        $batch_id = $request->batch_id;
+        $squad_id = $request->squad_id;
+
+        if( empty($batch_id) || empty($squad_id) ) {
+            echo "Batch Id and/or Squad Id is missing";
+            return;
+        }
+
+        $from_date = $request->from_date;
+        $to_date = $request->to_date;
+
+        if( empty($from_date) || empty($to_date) ) {
+            echo "Invalid date range selected";
+            return;
+        }
+
+        $from_date = date('Y-m-d', strtotime($from_date));
+        $to_date = date('Y-m-d', strtotime($to_date));
+
+        $date1 = new DateTime($from_date);
+        $date2 = new DateTime($to_date);
+
+        $diff = $date1->diff($date2);
+        if( $diff->invert === 1 ) {
+            echo "Invalid date range selected";
+            return;
+        }
+        $days = $diff->d;
+
+        $activities = DB::table('activities')
+            ->where('type', 'activity')
+            ->where('batch_id', $batch_id)
+            ->get();
+
+    ?>
+
+    <input type="hidden" name="batch_id" value="{{ $batch_id }}" class="hidden" />
+    <input type="hidden" name="squad_id" value="{{ $squad_id }}" class="hidden" />
+
+    <table class="table table-bordered timetable">
+        <thead>
+            <tr>
+                <th>Weekdays</th>
+                <th>Session 1</th>
+                <th>Session 2</th>
+                <th>Session 3</th>
+                <th>Session 4</th>
+                <th>Session 5</th>
+                <th>Session 6</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            for ($i = 0; $i <= $days; $i++) {
+                $date       = date('Y-m-d', strtotime($from_date . ' + ' . $i . ' days'));
+                $dayName    = date('l', strtotime($date));
+
+                echo "<tr><th>{$dayName}<br /><small>{$date}</small></th>";
+
+                $timetables = DB::table('timetables')
+                    ->where('squad_id', $squad_id)
+                    ->whereDate('date', $date)
+                    ->where('session_type', 'regular')
+                    ->orderBy('session_number', 'asc')->get();
+
+                // echo '<pre>';
+                // print_r($timetables);
+                // echo '</pre>';
+
+                // return;
+
+                $ti = 0;
+                if( !empty($timetables) ) {
+
+                    foreach ($timetables as $timetable) {
+                        $tt_id              = $timetable->id;
+                        $tt_activity_id    = $timetable->activity_id;
+                        $tt_subactivity_id    = $timetable->subactivity_id;
+
+                        $tt_date    = $timetable->date;
+                        $session_no = $timetable->session_number;
+                        if(empty($session_no)) {
+                            $session_no = $ti+1;
+                        }
+
+                        $tt_start    = $timetable->session_start;
+                        $tt_end      = $timetable->session_end;
+
+                        $session_time_start    = "";
+                        $session_time_end      = "";
+                        if( !empty($tt_start) && !empty($tt_end) ) {
+                            $session_time_start  = date('H:i', $tt_start);
+                            $session_time_end    = date('H:i', $tt_end);
+                        }
+
+                        $activityOptions    = "";
+                        if (!empty($activities)) {
+                            foreach ($activities as $activity) {
+                                $activity_id = $activity->id;
+                                $activity_name = $activity->name;
+
+                                $selected   = ($tt_activity_id === $activity_id)? "selected" : "";
+                                $activityOptions .= "<option value=\"{$activity_id}\" {$selected}>{$activity_name}</option>";
+                            }
+                        }
+
+                        $activitySelect = "
+                            <select name=\"activity_id[{$tt_id}]\" class=\"form-control\">
+                                <option value=\"\">Select activity...</option>
+                                {$activityOptions}
+                            </select>
+                        ";
+                        ?>
+
+                        <td data-sequence-id="" data-timetable-id="{{ $tt_id }}" data-timetable-date="{{ $tt_date }}">
+                            <div class="form-group">
+                                <div>
+                                    <div class="timetable-activity"><?php echo $activitySelect; ?></div>
+                                    <div class="timetable-subactivity"></div>
+                                </div>
+                                {{-- <input type="text" name="activity_time[{{ $tt_id }}]" value="{{ $activity_time }}"
+                                    placeholder="hh:mm AM - hh:mm AM" data-valid-example="08:30 AM - 10:00 AM"
+                                    class="form-control masked timerange-mask jquery-timepicker mt-2" oninput="window.timerangeMask(this)" /> --}}
+
+                                <div class="session-timerange-row">
+                                    <div class="session-timerange-col">
+                                        <input type="text" name="session_time_start[{{ $tt_id }}]" value="{{ $session_time_start }}" placeholder="HH:MM"
+                                            data-valid-example="08:30" class="form-control jquery-timepicker mt-2" />
+                                    </div>
+                                    <div class="session-timerange-col">-</div>
+                                    <div class="session-timerange-col">
+                                        <input type="text" name="session_time_end[{{ $tt_id }}]" value="{{ $session_time_end }}" placeholder="HH:MM"
+                                            data-valid-example="08:30" class="form-control jquery-timepicker mt-2" />
+                                    </div>
+                                </div>
+
+                                <input type="hidden" name="activity_date[{{ $tt_id }}]" value="{{ $tt_date }}" class="hidden" />
+                                <input type="hidden" name="session_number[{{ $tt_id }}]" value="{{ $session_no }}" class="hidden" />
+                            </div>
+                        </td>
+                        <?php
+
+                        $ti++;
+                    }
+                }
+
+                for($ti; $ti < 6; $ti++) {
+                    $activityOptions    = "";
+                    if (!empty($activities)) {
+                        foreach ($activities as $activity) {
+                            $activity_id = $activity->id;
+                            $activity_name = $activity->name;
+
+                            $activityOptions .= "<option value=\"{$activity_id}\">{$activity_name}</option>";
+                        }
+                    }
+
+                    $activitySelect = "
+                        <select name=\"activity_id[{$date}][{$ti}]\" class=\"form-control\">
+                            <option value=\"\">Select activity...</option>
+                            {$activityOptions}
+                        </select>
+                    ";
+
+                    $session_no = $ti+1;
+                    ?>
+                    <td data-sequence-id="{{ $ti }}" data-timetable-id="" data-timetable-date="{{ $date }}">
+                        <div class="form-group">
+                            <div>
+                                <div class="timetable-activity"><?php echo $activitySelect; ?></div>
+                                <div class="timetable-subactivity"></div>
+                            </div>
+                            {{-- <input type="text" name="activity_time[{{ $date }}][]" value="" placeholder="hh:mm AM - hh:mm AM"
+                                data-valid-example="08:30 AM - 10:00 AM" class="form-control masked timerange-mask mt-2"
+                                oninput="window.timerangeMask(this)" /> --}}
+
+                            <div class="session-timerange-row">
+                                <div class="session-timerange-col">
+                                    <input type="text" name="session_time_start[{{ $date }}][{{ $ti }}]" value="" placeholder="HH:MM"
+                                        data-valid-example="08:30" class="form-control jquery-timepicker mt-2" />
+                                </div>
+                                <div class="session-timerange-col">-</div>
+                                <div class="session-timerange-col">
+                                    <input type="text" name="session_time_end[{{ $date }}][{{ $ti }}]" value="" placeholder="HH:MM"
+                                        data-valid-example="08:30" class="form-control jquery-timepicker mt-2" />
+                                </div>
+                            </div>
+
+                            <input type="hidden" name="activity_date[{{ $date }}][{{ $ti }}]" value="{{ $date }}" class="hidden" />
+                            <input type="hidden" name="session_number[{{ $date }}][{{ $ti }}]" value="{{ $session_no }}" class="hidden" />
+                        </div>
+                    </td>
+                    <?php
+                    }
+                echo "</tr>";
+            }
+            ?>
+        </tbody>
+    </table>
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="usersubmitBtns">
+                <div class="mr-4">
+                    <button type="button" onclick="window.timetableUpdate_Submit();"
+                        class="btn formBtn submitBtn">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

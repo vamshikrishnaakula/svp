@@ -1,0 +1,16 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/js/common.js": "/js/common.js",
+    "/js/combined.js": "/js/combined.js",
+    "/js/faculty-dashboard.js": "/js/faculty-dashboard.js",
+    "/js/probationer-dashboard.js": "/js/probationer-dashboard.js",
+    "/js/receptionist.js": "/js/receptionist.js",
+    "/js/squads.js": "/js/squads.js",
+    "/js/statistics.js": "/js/statistics.js",
+    "/js/printThis.js": "/js/printThis.js",
+    "/css/app.css": "/css/app.css",
+    "/css/combined.css": "/css/combined.css",
+    "/css/probationer-dashboard.css": "/css/probationer-dashboard.css",
+    "/css/faculty-dashboard.css": "/css/faculty-dashboard.css",
+    "/css/style.css": "/css/style.css"
+}

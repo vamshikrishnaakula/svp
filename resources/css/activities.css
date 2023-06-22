@@ -1,0 +1,59 @@
+/******** Activities styles ***********/
+.activities-wrapper .sub-activity-item {
+    margin-bottom: 15px;
+}
+.activities-wrapper .sub-activity-item-inner {
+    padding-left: 10px;
+    border-left: 8px solid #f8f9fa;
+}
+
+.activities-wrapper .components-wrapper {
+    border-left: 8px solid #e9ecef;
+    padding-left: 10px;
+    margin-left: -10px;
+}
+
+#activity-search-container {
+    position: relative;
+    max-width: 400px;
+    margin-top: 13px;
+    margin-left: auto;
+}
+#activity-search-container input.search {
+    height: 39px;
+    line-height: 39px;
+}
+#activity-search-container.has-search .form-control-feedback {
+    top: 11px;
+    left: 15px;
+}
+
+#createactivity .activityform .form-control,
+#editactivity #editactivity_form .form-control {
+    margin-bottom: 35px !important;
+}
+#viewactivity #editactivity_form .form-control {
+    margin-bottom: 10px !important;
+}
+
+.form-control:disabled {
+    background-color: #f7f7f7;
+    cursor: default;
+    opacity: 1;
+}
+.form-control[readonly] {
+    background-color: #e9ecef !important;
+    opacity: 1;
+}
+
+.has_grading_wrapper {
+    position: absolute;
+    bottom: -8px;
+}
+.has_grading_wrapper input {
+    font-size: 13px;
+}
+.has_grading_wrapper label {
+    font-size: 14px;
+    color: #666666;
+}

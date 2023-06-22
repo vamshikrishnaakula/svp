@@ -1,0 +1,5 @@
+Batch,Squad,Activity,Subactivity,Date,Session Number,Time (Start),Time (End)
+batch_name,squad_number,activity_name,subactivity_name,date,session_number,time_start,time_end
+00RR,1,Physical Training,Running,YYYY-MM-DD,1,HH:MM,HH:MM
+00RR,2,Swimming,,YYYY-MM-DD,3,13:30,14:30
+XYZ,1,Drill,Cane Drill,YYYY-MM-DD,1,08:00,09:00

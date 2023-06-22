@@ -1,0 +1,208 @@
+/******** attendance management styles ***********/
+
+/* sticky first column */
+table.monthlyreportinfo th:first-child, table.monthlyreportinfo td:first-child {
+    position: sticky;
+    left: -2px;
+}
+table.attendance-report-table tr:nth-child(2) th:first-child,
+table.monthly-sessions-table tr:nth-child(2) th:first-child,
+table.monthly-sessions-table tr:nth-child(3) th:first-child {
+    position: unset;
+    left: unset;
+}
+table.monthlyreportinfo td:first-child {
+    background: white;
+}
+
+.attendance_table thead {
+    background: #789abd;
+}
+
+.attendance_table thead th {
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+}
+
+.attendance_table tbody {
+    background: #fff;
+    text-align: center;
+}
+
+.attendance_table tbody td {
+    width: 100px;
+    height: 55px;
+}
+
+.attendance_table td > div {
+    position: relative;
+    display: block;
+    min-height: 30px;
+    min-width: 110px;
+}
+.attendance_table td.tt-not-available > small {
+    min-width: 110px;
+}
+.attendance_table td span.blank-attendance {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.attendance_table ul.attendance-list li img {
+    display: none;
+    width: 28px;
+}
+.attendance_table ul.attendance-list li.active img {
+    display: inline-block;
+}
+
+.attendance_table ul.attendance-list li img {
+    transform: scale(1);
+}
+.attendance_table ul.attendance-list li img:hover {
+    transform: scale(1.1);
+}
+
+.attendance_table ul.attendance-list li {
+    display: inline;
+    cursor: pointer;
+}
+
+.attendance_report .input-group {
+    width: 100% !important;
+}
+
+/* .attendance_report form {
+    width: 70%;
+    margin: 0 auto;
+} */
+
+.date {
+    width: 100% !important;
+}
+
+.monthlyreportinfo tbody {
+    background: #fff;
+}
+
+.monthlyreportinfo th {
+    background: #816bd9;
+}
+
+.monthlyreportinfo tr:first-child th:first-child {
+    background: #789abd !important;
+    color: #fff !important;
+    min-width: 250px;
+}
+
+#monthlyreporttable table thead tr:last-child th {
+    background: #f1e8e8;
+    color: #000;
+}
+
+#monthlysessionsreport table thead th {
+    background: #c2e09c;
+    color: #000;
+}
+
+#missedsessionsreport table thead th {
+    background: #cfcfcf;
+    color: #000;
+}
+
+.reporttable {
+    margin: 30px;
+}
+
+.reporttable .download {
+    text-align: center;
+}
+
+.reporttable .download p {
+    font-size: 12px;
+}
+
+.reporttable .download img {
+    width: 30px;
+}
+
+.reporttable .reporttablehead {
+    background: #818181;
+    color: #fff;
+    padding: 5px;
+}
+
+.reporttable .reporttablehead span {
+    padding: 0px 15px;
+}
+
+.reporttable .reporttablehead span:last-child {
+    float: right;
+}
+
+.monthlyreportinfo thead .reporttablehead th {
+    border: none;
+}
+
+.monthlyreportinfo thead .reporttablehead {
+    background: #789abd;
+}
+
+.monthlyreportinfo thead tr {
+    background: #789abd;
+    color: #fff;
+}
+
+.monthlyreportinfo thead th {
+    border-right: 1px solid #fff;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.monthlyreportinfo thead th:first-child {
+    vertical-align: middle;
+}
+
+.monthlyreportinfo th,
+.monthlyreportinfo tbody td {
+    text-align: center;
+    font-weight: 500;
+}
+
+.monthlyreportinfo th span,
+.monthlyreportinfo td span {
+    padding: 0px 5px;
+}
+
+.monthlyreportinfo td span {
+    padding: 0px 10px;
+}
+
+.monthlyreportinfo td span:first-child {
+    border-right: 1px solid #e7e7e7;
+}
+
+#add_extraSessions_table {
+    max-width: 650px;
+    margin: auto;
+    border: none;
+    table-layout: fixed;
+}
+
+#add_extraSessions_table tr td {
+    border: none;
+}
+#add_extraSessions_table tr td:first-child {
+    width: 140px;
+}
+
+#add_extraSessions_table tr:not(:first-child) {
+    border-bottom: 1px solid #dee2e6;
+}
+#add_extraSessions_table input.timerange-mask {
+    width: 100%;
+}

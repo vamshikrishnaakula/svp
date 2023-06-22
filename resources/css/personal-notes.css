@@ -1,0 +1,91 @@
+
+.notes-wrapper {
+    background: #f3f5fe;
+    padding: 10px;
+    border-radius: 20px;
+    height: 100%;
+}
+
+.notes-wrapper h4 {
+    font-size: 22px;
+    padding-left: 20px;
+}
+
+#createNotificationBtn {
+    margin-right: 9px;
+}
+
+.note-item {
+    background: #fff;
+    padding: 12px;
+    margin: 8px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.note-item.unread-note {
+    cursor: pointer;
+}
+.note-item.unread-note:hover {
+    background-color: #fafafa;
+}
+
+.note-title-bar {
+    display: flex;
+    justify-content: space-between;
+}
+.note-title-bar h5 {
+    color: #0f7d94;
+    font-size: 15px;
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+/* .note-item .edit-note-link,
+.note-item .delete-note-link {
+    display: none;
+    font-size: 12px;
+    padding: 2px 8px;
+    margin-left: 4px;
+    cursor: pointer;
+}
+*/
+.note-title-bar p {
+    font-size: 12px;
+    margin-bottom: 7px;
+    color: #43808d;
+}
+p.note-metadata {
+    color: #6d6d6d;
+    font-size: 12px;
+    margin-top: -6px;
+    margin-bottom: 10px;
+}
+
+p.note-metadata .note-action-links {
+    visibility: hidden;
+}
+.note-item:hover .note-action-links {
+    visibility: visible;
+}
+p.note-metadata .note-action-links > span {
+    margin: 0 5px 0 0;
+    cursor: pointer;
+}
+p.note-metadata .note-action-links > span:hover {
+    text-decoration: underline;
+}
+
+
+.note-message {
+    color: #3a3a3a;
+}
+
+#createNotificationForm .note-select-batch-squad > div{
+    display: inline-block;
+    width: 49%;
+}
+#createNotificationForm .select-batch-container,
+#createNotificationForm .select-squad-container {
+    display: none;
+}

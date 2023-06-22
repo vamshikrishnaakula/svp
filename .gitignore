@@ -1,0 +1,82 @@
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.*
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+resources/views/layouts/aside.blade.php
+app/Providers/AuthServiceProvider.php
+
+
+# -------------------------------------------------
+# Ignore compiled js/css files
+# -------------------------------------------------
+# public/css/combined.css
+# public/js/app.js
+# public/js/common.js
+# public/js/combined.js
+# public/js/common.js
+# public/js/probationer-dashboard.js
+
+public/css/*
+public/js/*
+composer.lock
+package-lock.json
+
+# -------------------------------------------------
+# Ignore public/uploads
+# -------------------------------------------------
+public/uploads/
+
+# -------------------------------------------------
+# Track this files from public/ folder
+# -------------------------------------------------
+!public/css/bootstrap.min.css
+!public/js/bootstrap.min.js
+!public/js/jquery.inputmask.bundle.js
+
+# -------------------------------------------------
+# ignore user / system specific files
+# -------------------------------------------------
+.vscode
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+# ignore compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+# ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# ignore OS generated files
+ehthumbs.db
+Thumbs.db
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# ignore backup and old files
+*.old
+_old/
+tmp/

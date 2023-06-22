@@ -1,0 +1,125 @@
+/******** timetable styles ***********/
+
+#createtimetable .patient_userBtns a,
+#viewtimetable .patient_userBtns a {
+    margin: 0;
+}
+
+#get_timetableView_form,
+#get_timetableUpdate_form {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.timetable th {
+    min-width: 180px;
+}
+
+.timetable th span.add_more_session {
+    display: none;
+    float: right;
+    color: #459def;
+    font-size: 13px;
+    line-height: 13px;
+    padding: 3px 5px;
+    border: 1px solid #459def;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.timetable th:last-child span.add_more_session {
+    display: initial;
+}
+
+.timetable .input-group {
+    width: auto !important;
+    /* margin: 0px 10px; */
+}
+
+.timetable .timerange {
+    display: flex;
+}
+
+.timetable tbody tr th {
+    background: #cbdde1;
+}
+
+.timetable thead th {
+    background: #f7f5f5;
+}
+
+.input-group-text {
+    background: none;
+    border: none;
+}
+
+#createtimetable .table-responsive,
+#viewtimetable .table-responsive {
+    height: auto;
+}
+
+#createtimetable .table {
+    margin-bottom: 0;
+}
+
+.timetable tr th:first-child {
+    position: sticky;
+    /* top: 0; */
+    left: -2px;
+    vertical-align: middle;
+    border-right: 1px solid #dee2e6;
+    z-index: 10;
+}
+
+
+/* .timetable tbody th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 10;
+} */
+
+
+/* .timetable tbody tr td {
+    max-width: 150px;
+} */
+
+.timetable tr.timetable-weekend td {
+    background-color:#fff0de;
+    border-color: #afafaf;
+}
+
+.timetable tbody tr td a {
+    color: #fff !important;
+}
+
+.timetable tbody tr td a.editvalue {
+    float: right;
+    position: relative;
+    top: 10px;
+    font-size: 12px;
+}
+
+.timetable tbody tr td div {
+    align-items: center;
+}
+
+.timetable tbody tr td div a {
+    margin-left: 5px;
+}
+
+.timetable tbody tr td a .fa-edit {
+    color: #000 !important;
+}
+
+
+/* Session time range picker */
+
+.session-timerange-col {
+    display: inline-block;
+    width: calc(50% - 12px);
+}
+
+.session-timerange-col:nth-child(2) {
+    width: 15px;
+    text-align: center;
+}
