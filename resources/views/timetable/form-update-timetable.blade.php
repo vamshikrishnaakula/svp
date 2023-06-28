@@ -1,3 +1,8 @@
+<style>
+    .timetable-weekend2 {
+        background-color: red !important;
+    }
+</style>
 <form name="timetableUpdate_form" id="timetableUpdate_form" action="{{ url('timetables/ajax') }}" method="post"
     class="" accept-charset="utf-8">
     @csrf
@@ -65,6 +70,8 @@
                 <th>Weekdays</th>
                 @for ($ssn = 1; $ssn <= $sessionCount; $ssn++)
                     <th>
+                        {{-- //// --}}
+                        {{-- <th class="text-center" style="min-width:auto">Holiday</th> --}}
                         Session {{ $ssn }}
                         <span class="add_more_session"><i class="fas fa-plus"></i> Add</span>
                     </th>
@@ -77,9 +84,9 @@
                 $date       = date('Y-m-d', strtotime($from_date . ' + ' . $i . ' days'));
                 $dayName    = date('l', strtotime($date));
                 //print_r($dayName);exit;
-
+                //kkk
                // $row_class  = in_array(strtolower($dayName), ['saturday', 'sunday'])? 'timetable-weekend' : 'timetable-weekdays';
-
+//holiday checkbox
                  $hoilday_check = App\Models\Hoilday::where('batch_id', $batch_id)->where('squad_id', $squad_id)->whereDate('date', $date)->first();
                  $check = ($hoilday_check == '') ? '' : 'checked';
                  $row_class = ($hoilday_check == '') ? 'timetable-weekdays' : 'timetable-weekend';
@@ -165,6 +172,16 @@
 
             <td data-sequence-id="{{ $ti }}" data-timetable-id="{{ $tt_id }}"
                 data-timetable-date="{{ $tt_date }}">
+                ////kkkk
+                {{-- //$hoilday_check = App\Models\Hoilday::where('batch_id', $batch_id)
+                // ->where('squad_id', $squad_id)
+                // ->whereDate('date', $date)
+                // ->first();
+                //$check = $hoilday_check == '' ? '' : 'checked';
+                //$row_class = $hoilday_check == '' ? 'timetable-weekdays' : 'timetable-weekend'; --}}
+                {{-- <input class='timetable-weekend2' type='checkbox' id='mark_hoilday' name='mark_hoilday[{$date}]'> --}}
+                {{-- <th>{$dayName}<br /><small>{$date}</small></th>"; --}}
+                <input type='checkbox' class='timetable-weekend2' />
                 <div class="form-group mb-0">
                     <div>
                         <div class="timetable-activity"><?php echo $activitySelect; ?></div>
@@ -192,7 +209,6 @@
                 </div>
             </td>
             <?php
-                           
 
                         } else {
                             $activityOptions    = "";
@@ -309,10 +325,100 @@
         }
     });
 
-    $('tr input[type="checkbox"]').each(function() {
+    $('td input[type="checkbox"]').each(function() {
         var ischecked = $(this).is(':checked');
         if (ischecked) {
             $(this).closest('tr').find('input:text, select').attr('disabled', this.checked);
         }
     });
 </script>
+//
+<script>
+    $(document).ready(function() {
+        $('input[type="checkbox"].timetable-weekend2').each(function() {
+            var isChecked = $(this).is(':checked');
+            var td = $(this).closest('td');
+
+            if (isChecked) {
+                td.addClass('timetable-weekend2');
+            } else {
+                td.removeClass('timetable-weekend2');
+            }
+        });
+    });
+
+    $('input[type="checkbox"].timetable-weekend2').change(function() {
+        var isChecked = $(this).is(':checked');
+        var td = $(this).closest('td');
+
+        if (isChecked) {
+            td.addClass('timetable-weekend2');
+        } else {
+            td.removeClass('timetable-weekend2');
+        }
+    });
+</script>
+{{-- <script>
+    $('td input[type="checkbox"]').change(function() {
+        //enable/disable all except checkboxes, based on the row is checked or not
+        var row = $(this).closest('td').find('input:text, select').attr('disabled', this.checked);
+        $(this).closest('td').find('select').val('');
+
+        var ischecked = $(this).is(':checked');
+
+        if (ischecked) {
+            $(this).closest('td').removeClass('timetable-weekdays');
+            $(this).closest('td').addClass('timetable-weekend2');
+            $(this).closest('td').find('input:text, select').removeClass('reqField');
+        } else {
+            $(this).closest('td').addClass('timetable-weekdays');
+            $(this).closest('td').removeClass('timetable-weekend2');
+        }
+    });
+
+    $('td input[type="checkbox"]').each(function() {
+        var ischecked = $(this).is(':checked');
+        if (ischecked) {
+            $(this).closest('tr').find('input:text, select').attr('disabled', this.checked);
+        }
+    });
+</script>
+{{-- <script>
+    // Handle 'tr input[type="checkbox"]'
+    $('tr input[type="checkbox"]').change(function() {
+        var isChecked = $(this).is(':checked');
+        var row = $(this).closest('tr');
+
+        if (isChecked) {
+            row.removeClass('timetable-weekdays');
+            row.addClass('timetable-weekend2');
+            row.find('input:text, select').removeClass('reqField');
+        } else {
+            row.addClass('timetable-weekdays');
+            row.removeClass('timetable-weekend2');
+        }
+
+        var inputElements = row.find('input:text, select');
+        inputElements.attr('disabled', isChecked);
+        inputElements.val('');
+    });
+
+    // Handle 'td input[type="checkbox"]'
+    $('td input[type="checkbox"]').change(function() {
+        var isChecked = $(this).is(':checked');
+        var td = $(this).closest('td');
+
+        if (isChecked) {
+            td.removeClass('timetable-weekdays');
+            td.addClass('timetable-weekend2');
+            td.find('input:text, select').removeClass('reqField');
+        } else {
+            td.addClass('timetable-weekdays');
+            td.removeClass('timetable-weekend2');
+        }
+
+        var inputElements = td.find('input:text, select');
+        inputElements.attr('disabled', isChecked);
+        inputElements.val('');
+    });
+</script> --}}

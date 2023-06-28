@@ -518,11 +518,11 @@ class TimetableController extends Controller
                             'batch_id' => $batch_id,
                             'squad_id' => $copySquadsId,
                             'date' => $key,
+                            'session_number' => $session_num,
                             'created_at' => $timestamp,
                             'updated_at' => $timestamp,
                         ]
                     );
-
                     // $Timetable  = Timetable::updateOrCreate(
                     //     [
                     //         'batch_id'  => $batch_id,

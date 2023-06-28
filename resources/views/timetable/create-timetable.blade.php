@@ -18,7 +18,7 @@
                             title="Import Timetable"> <img src="{{ asset('images/import.png') }}" /></a>
                         {{-- <a href="{{ asset('csv/import-timetables-sample.csv') }}" data-toggle="tooltip" title="Download Sample CSV for Bulk Import"> <img src="{{ asset('images/excel.png') }}" /></a> --}}
                         {{-- <a href="#" data-toggle="tooltip" title="download"> <img src="{{ asset('images/download1.png') }}" /></a>
-                    <a href="#" data-toggle="tooltip" title="print"> <img src="{{ asset('images/print1.png') }}" /></a> --}}
+                        <a href="#" data-toggle="tooltip" title="print"> <img src="{{ asset('images/print1.png') }}" /></a> --}}
                     </div>
                 </div>
             </div>
