@@ -86,7 +86,7 @@
                 //print_r($dayName);exit;
                 //kkk
                // $row_class  = in_array(strtolower($dayName), ['saturday', 'sunday'])? 'timetable-weekend' : 'timetable-weekdays';
-//holiday checkbox
+///holiday checkbox
                  $hoilday_check = App\Models\Hoilday::where('batch_id', $batch_id)->where('squad_id', $squad_id)->whereDate('date', $date)->first();
                  $check = ($hoilday_check == '') ? '' : 'checked';
                  $row_class = ($hoilday_check == '') ? 'timetable-weekdays' : 'timetable-weekend';
@@ -172,15 +172,7 @@
 
             <td data-sequence-id="{{ $ti }}" data-timetable-id="{{ $tt_id }}"
                 data-timetable-date="{{ $tt_date }}">
-                ////kkkk
-                {{-- //$hoilday_check = App\Models\Hoilday::where('batch_id', $batch_id)
-                // ->where('squad_id', $squad_id)
-                // ->whereDate('date', $date)
-                // ->first();
-                //$check = $hoilday_check == '' ? '' : 'checked';
-                //$row_class = $hoilday_check == '' ? 'timetable-weekdays' : 'timetable-weekend'; --}}
-                {{-- <input class='timetable-weekend2' type='checkbox' id='mark_hoilday' name='mark_hoilday[{$date}]'> --}}
-                {{-- <th>{$dayName}<br /><small>{$date}</small></th>"; --}}
+                ////kkk
                 <input type='checkbox' class='timetable-weekend2' />
                 <div class="form-group mb-0">
                     <div>
@@ -309,83 +301,6 @@
 
 <script>
     $('tr input[type="checkbox"]').change(function() {
-        //enable/disable all except checkboxes, based on the row is checked or not
-        var row = $(this).closest('tr').find('input:text, select').attr('disabled', this.checked);
-        $(this).closest('tr').find('select').val('');
-
-        var ischecked = $(this).is(':checked');
-
-        if (ischecked) {
-            $(this).closest('tr').removeClass('timetable-weekdays');
-            $(this).closest('tr').addClass('timetable-weekend');
-            $(this).closest('tr').find('input:text, select').removeClass('reqField');
-        } else {
-            $(this).closest('tr').addClass('timetable-weekdays');
-            $(this).closest('tr').removeClass('timetable-weekend');
-        }
-    });
-
-    $('td input[type="checkbox"]').each(function() {
-        var ischecked = $(this).is(':checked');
-        if (ischecked) {
-            $(this).closest('tr').find('input:text, select').attr('disabled', this.checked);
-        }
-    });
-</script>
-//
-<script>
-    $(document).ready(function() {
-        $('input[type="checkbox"].timetable-weekend2').each(function() {
-            var isChecked = $(this).is(':checked');
-            var td = $(this).closest('td');
-
-            if (isChecked) {
-                td.addClass('timetable-weekend2');
-            } else {
-                td.removeClass('timetable-weekend2');
-            }
-        });
-    });
-
-    $('input[type="checkbox"].timetable-weekend2').change(function() {
-        var isChecked = $(this).is(':checked');
-        var td = $(this).closest('td');
-
-        if (isChecked) {
-            td.addClass('timetable-weekend2');
-        } else {
-            td.removeClass('timetable-weekend2');
-        }
-    });
-</script>
-{{-- <script>
-    $('td input[type="checkbox"]').change(function() {
-        //enable/disable all except checkboxes, based on the row is checked or not
-        var row = $(this).closest('td').find('input:text, select').attr('disabled', this.checked);
-        $(this).closest('td').find('select').val('');
-
-        var ischecked = $(this).is(':checked');
-
-        if (ischecked) {
-            $(this).closest('td').removeClass('timetable-weekdays');
-            $(this).closest('td').addClass('timetable-weekend2');
-            $(this).closest('td').find('input:text, select').removeClass('reqField');
-        } else {
-            $(this).closest('td').addClass('timetable-weekdays');
-            $(this).closest('td').removeClass('timetable-weekend2');
-        }
-    });
-
-    $('td input[type="checkbox"]').each(function() {
-        var ischecked = $(this).is(':checked');
-        if (ischecked) {
-            $(this).closest('tr').find('input:text, select').attr('disabled', this.checked);
-        }
-    });
-</script>
-{{-- <script>
-    // Handle 'tr input[type="checkbox"]'
-    $('tr input[type="checkbox"]').change(function() {
         var isChecked = $(this).is(':checked');
         var row = $(this).closest('tr');
 
@@ -421,4 +336,4 @@
         inputElements.attr('disabled', isChecked);
         inputElements.val('');
     });
-</script> --}}
+</script>
